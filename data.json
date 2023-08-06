@@ -1,0 +1,68 @@
+[
+    {   
+        "categoryName": "Remeras",
+        "img": "/img/remeras-hombre-dino-butelli-colores-negro-1.jpg",
+        "productos": {
+            "dragon": {
+                "img":"/img/instagram.png",
+                "name": "Remera Dragon",
+                "price": 4500
+            }
+        }
+    },
+    {   
+        "categoryName": "Camperas",
+        "img": "/img/camperas.jpg",
+        "productos": {
+            "dragon": {
+                "img":"/img/instagram.png",
+                "name": "Campera Dragon",
+                "price": 14500
+            }
+        }
+    },
+    {   
+        "categoryName": "Pantalones",
+        "img": "/img/pantalondragon.jpg",
+        "productos": {
+            "dragon": {
+                "img":"/img/instagram.png",
+                "name": "Pantalon Dragon",
+                "price": 5000
+            }
+        }
+    },
+    {   
+        "categoryName": "Ropa interior",
+        "img": "/img/ropainterior.jpg",
+        "productos": {
+            "dragon": {
+                "img":"/img/instagram.png",
+                "name": "Medias Dragon",
+                "price": 1000
+            }
+        }
+    },
+    {   
+        "categoryName": "Calzados",
+        "img": "/img/calzados.jpg",
+        "productos": {
+            "dragon": {
+                "img":"/img/instagram.png",
+                "name": "Zapatillas Dragon",
+                "price": 12500
+            }
+        }
+    },
+    {   
+        "categoryName": "Accesorios",
+        "img": "/img/accesorios.jpg",
+        "productos": {
+            "dragon": {
+                "img":"/img/instagram.png",
+                "name": "Aros Dragon",
+                "price": 500
+            }
+        }
+    }
+]
