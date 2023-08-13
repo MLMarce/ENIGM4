@@ -134,6 +134,10 @@ function crearProductos(categoria) {
                 </div>
             </div>
         `;
+        const productList = document.querySelectorAll('.product-list');
+        productList.forEach(element => {
+            element.addEventListener('click', agrandarProducto);
+        });;
     }
 }
 
@@ -175,14 +179,28 @@ function crearAccesorios() {
 
 //funcion para mostrar en grande el producto seleccionado
 function agrandarProducto() {
+    const spanPrice = document.createElement('product-card__span');
+    spanPrice.innerText = '$5553';
+    const spanTalle = document.createElement('product-card__span');
+    spanTalle.innerText = '32';
+    const spanDescription = document.createElement('product-card__span');
+    spanDescription.innerText = 'Descripción del producto';
     const productCardDescription = document.createElement('p');
     productCardDescription.classList.add('product-card__description');
+    productCardDescription.innerText = 'Descripción: ';
+    productCardDescription.appendChild(spanDescription);
     const productCardTalle = document.createElement('p');
     productCardTalle.classList.add('product-card__talle');
+    productCardTalle.innerText = 'Talle: ';
+    productCardTalle.appendChild(spanTalle);
     const productCardPrice = document.createElement('p');
+    productCardPrice.appendChild(spanPrice);
     productCardPrice.classList.add('product-card__price');
+    productCardPrice.innerText = 'Precio: ';
+    productCardPrice.appendChild(spanPrice);
     const productCardName = document.createElement('h4');
     productCardName.classList.add('product-card__name');
+    productCardName.innerText = 'Remera';
     const productCardData = document.createElement('div');
     productCardData.classList.add('product-card__data');
     productCardData.appendChild(productCardName)
@@ -191,11 +209,15 @@ function agrandarProducto() {
     productCardData.appendChild(productCardDescription);
     const productCardImg = document.createElement('img');
     productCardImg.classList.add('product-card__img');
+    productCardImg.setAttribute('src', '/img/pantalondragon.jpg')
     const xIconProduct = document.createElement('i');
     xIconProduct.classList.add('fa-solid');
     xIconProduct.classList.add('fa-x');
     xIconProduct.classList.add('fa-xm');
     xIconProduct.classList.add('product-card__close');
+    xIconProduct.addEventListener('click', () => {
+        principalSection.removeChild(productBacground);
+    })
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
     productCard.appendChild(xIconProduct);
@@ -207,4 +229,5 @@ function agrandarProducto() {
 
     principalSection.appendChild(productBacground);
 }
+
 

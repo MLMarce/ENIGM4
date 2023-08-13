@@ -273,13 +273,12 @@ form {
 /* Producto */
 .product-background {
     width: 100vw;
-    height: calc(100vh - 50px);
+    height: 100vh;
     position: absolute;
-    top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0005;
+    background: #0008;
 }
 .product-card {
     width: 80vw;
@@ -417,7 +416,7 @@ form {
 
     /* Producto */
     .product-background {
-        top: 17px;
+        top: 0px;
     }
     .product-card {
         width: auto;
