@@ -4,12 +4,12 @@
         "img": "/img/remeras-hombre-dino-butelli-colores-negro-1.jpg",
         "productos": [
             {
-                "img":"/img/instagram.png",
+                "img":"/img/remeras-hombre-dino-butelli-colores-negro-1.jpg",
                 "name": "Remera Dragon",
                 "price": 4500
             },
             {
-                "img":"/img/instagram.png",
+                "img":"/img/remeras-hombre-dino-butelli-colores-negro-1.jpg",
                 "name": "Remera medusa",
                 "price": 4500
             }
@@ -20,7 +20,7 @@
         "img": "/img/camperas.jpg",
         "productos": [
             {
-                "img":"/img/instagram.png",
+                "img":"/img/camperas.jpg",
                 "name": "Campera Dragon",
                 "price": 14500
             }
@@ -31,18 +31,18 @@
         "img": "/img/pantalondragon.jpg",
         "productos":[ 
                 {
-                    "img":"/img/instagram.png",
+                    "img":"/img/pantalondragon.jpg",
                     "name": "Pantalon Dragon",
                     "price": 5000
                 }
             ]
     },
     {   
-        "categoryName": "Ropa interior",
+        "categoryName": "RopaInterior",
         "img": "/img/ropainterior.jpg",
         "productos": [
             {
-                "img":"/img/instagram.png",
+                "img":"/img/ropainterior.jpg",
                 "name": "Medias Dragon",
                 "price": 1000
             }
@@ -53,7 +53,7 @@
         "img": "/img/calzados.jpg",
         "productos": [
             {
-                "img":"/img/instagram.png",
+                "img":"/img/calzados.jpg",
                 "name": "Zapatillas Dragon",
                 "price": 12500
             }
@@ -64,7 +64,7 @@
         "img": "/img/accesorios.jpg",
         "productos": [
             {
-                "img":"/img/instagram.png",
+                "img":"/img/accesorios.jpg",
                 "name": "Aros Dragon",
                 "price": 500
             }

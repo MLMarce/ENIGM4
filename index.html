@@ -8,70 +8,83 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <main>
-        <header class="header-mobile">
-            <div class="container-mobile-header">
-                <div class="icon-menu">
-                    <i class="fa-solid fa-bars fa-lg" id="bars-icon"></i>
-                </div>
-                <h1 class="brand">ENIGM4</h1>
-                <div class="ig-header">
-                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram ig-icon"></i></a>
-                </div>
+    <header class="header-mobile">
+        <div class="container-mobile-header">
+            <div class="icon-menu">
+                <i class="fa-solid fa-bars fa-lg" id="bars-icon"></i>
             </div>
-        </header>
-
-        <aside class="menu-mobile inactive">
-            <div class="close">
-                <h2>ENIGM4</h2>
-                <i class="fa-solid fa-x fa-xm" id="x-icon"></i>
+            <h1 class="brand">ENIGM4</h1>
+            <div class="ig-header">
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram ig-icon"></i></a>
             </div>
-            <div class="form">
+        </div>
+    </header>
+    <header class="header-desktop">
+        <div class="container-desktop-header">
+            <div class="form-desktop">
                 <div class="buscador">
-                    <input type="search" autocomplete="none" placeholder="Buscar Categorias"  name="buscador" class="input-search" id="search-input">
+                    <input type="search" autocomplete="none" placeholder="Buscar"  name="buscador" class="input-search" id="search-input-desktop">
                     <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
-            <div class="list">
-                <ul class="menu-list">
-                    <li><a id="inicio" href="/index.html">Inicio</a></li>
-                    <li><a id="categories" href="#">Categorias</a></li>
-                    <li><a id="politica-cambios" href="#">Politica de cambios y devoluciones</a></li>
-                    <li><a id="cuidado-prendas" href="#">Cuidado de prendas</a></li>
-                    <li><a id="envios" href="#">Envios</a></li>
-                    <li><a id="terminos" href="#">Terminos y condiciones</a></li>
-                </ul>
+            <h1 class="brand-desktop">ENIGM4</h1>
+            <div class="ig-header">
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram ig-icon"></i></a>
             </div>
-            
-            <div class="foot-aside">
-                <div class="ig">
-                    <p>Seguinos en <span><a href="https://www.instagram.com/" target="_blank">Instagram</i></a></span></p>
-                </div>
-                <div class="wapp">
-                    Consultas por <span><a href="https://api.whatsapp.com/send/?phone=543425103196&text&type=phone_number&app_absent=0" target="_blank">Whatsapp</a></span>
-                </div>
-            </div>
-        </aside>
+        </div>
+        <div class="list">
+            <ul class="menu-list">
+                <li><a id="inicio-desktop" href="#">Inicio</a></li>
+                <li><a id="categories-desktop" href="#">Categorias</a></li>
+                <li><a id="politica-cambios-desktop" href="#">Politica de cambios y devoluciones</a></li>
+                <li><a id="cuidado-prendas-desktop" href="#">Cuidado de prendas</a></li>
+                <li><a id="envios-desktop" href="#">Envios</a></li>
+                <li><a id="terminos-desktop" href="#">Terminos y condiciones</a></li>
+            </ul>
+        </div>
+    </header>
 
+    <aside class="menu-mobile inactive">
+        <div class="close">
+            <h2>ENIGM4</h2>
+            <i class="fa-solid fa-x fa-xm" id="x-icon"></i>
+        </div>
+        <div class="form">
+            <div class="buscador">
+                <input type="search" autocomplete="none" placeholder="Buscar"  name="buscador" class="input-search" id="search-input">
+                <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="list">
+            <ul class="menu-list">
+                <li><a id="inicio" href="/index.html">Inicio</a></li>
+                <li><a id="categories" href="#">Categorias</a></li>
+                <li><a id="politica-cambios" href="#">Politica de cambios y devoluciones</a></li>
+                <li><a id="cuidado-prendas" href="#">Cuidado de prendas</a></li>
+                <li><a id="envios" href="#">Envios</a></li>
+                <li><a id="terminos" href="#">Terminos y condiciones</a></li>
+            </ul>
+        </div>
+        
+        <div class="foot-aside">
+            <div class="ig">
+                <p>Seguinos en <span><a href="https://www.instagram.com/" target="_blank">Instagram</i></a></span></p>
+            </div>
+            <div class="wapp">
+                Consultas por <span><a href="https://api.whatsapp.com/send/?phone=543425103196&text&type=phone_number&app_absent=0" target="_blank">Whatsapp</a></span>
+            </div>
+        </div>
+    </aside>
+    <main>
         <section class="principal-section">
-            <div class="product-background">
-                <div class="product-card">
-                    <i class="fa-solid fa-x fa-xm product-card__close" id="x-icon-product"></i>
-                    <img class="product-card__img" src="/img/pantalondragon.jpg" alt="">
-                    <div class="product-card__data">
-                        <h4 class="product-card__name">Pantalon</h4>
-                        <p class="product-card__price"><span class="product-card__span">Precio:</span> $5500</p>
-                        <p class="product-card__talle"><span class="product-card__span span-talle">Talle:</span> 34</p>
-                        <p class="product-card__description"><span class="product-card__span">Descripcion:</span> pantalon con dibujo de dragon.</p>
-                    </div>
-                </div>
-            </div>
+            
         </section>
-
-        <footer>
-
-        </footer>
     </main>
+
+    <footer>
+
+    </footer>
+    
 
     <script type="module" src="index.js"></script>
 </body>
