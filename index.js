@@ -7,8 +7,9 @@ const pantalones = datos[2];
 const ropaInterior = datos[3];
 const calzados = datos[4];
 const accesorios = datos[5];
+const categoryList = [remeras, camperas, pantalones, ropaInterior, calzados, accesorios];
 
-const xIcon = document.querySelector('#x-icon');
+const xIconAside = document.querySelector('#x-icon');
 const barsIcon = document.querySelector('#bars-icon');
 const menuMobile = document.querySelector('.menu-mobile');
 const headerMobile = document.querySelector('.header-mobile');
@@ -30,16 +31,38 @@ const menuterminosDesktop = document.querySelector('#terminos-desktop');
 
 // listeners del menu lateral en mobile 
 barsIcon.addEventListener('click', abrirAside);
-xIcon.addEventListener('click', cerrarAside);
+xIconAside.addEventListener('click', cerrarAside);
 btnSearch.addEventListener('click', buscar);
-menuCategoriesMobile.addEventListener('click', crearCategorias);
-menuCategoriesMobile.addEventListener('click', cerrarAside);
+menuCategoriesMobile.addEventListener('click', function () {
+    crearCategorias();
+    cerrarAside();
+});
 menuInicioMobile.addEventListener('click', crearTodosLosProductos);
 menuInicioMobile.addEventListener('click', cerrarAside);
 
 //listeners del menu escritorio
 menuInicioDesktop.addEventListener('click', crearTodosLosProductos);
 menuCategoriesDesktop.addEventListener('click', crearCategorias);
+
+//abriendo los productos de las diferentes categorias
+principalSection.addEventListener('click',  (event) => {
+    if(event.target.classList.contains('categories__name')) {
+        const categoryNameblock = event.target.id;
+        for(let category of categoryList) {
+            if(category.categoryName == categoryNameblock) {
+                principalSection.innerHTML = '';
+                crearProductos(category);
+                principalSection.addEventListener('click', (event) => {
+                    if (event.target.classList.contains('product-card__close')) {
+                        principalSection.innerHTML = '';
+                        crearProductos(category)
+                    }
+                })
+            }
+        }
+    }
+    
+});
 
 function cerrarAside() {
     menuMobile.classList.add("inactive");
@@ -79,10 +102,6 @@ function buscar() { //renombrar y mejorar para que se pueda buscar cualquier pro
             }
         }
     }
-
-
-    
-
     
 }
 
@@ -99,19 +118,8 @@ function crearCategorias() {
     }
 
     //accediendo a los productos de cada categoria al darles click
-    const btnRemeras = document.querySelector('#Remeras');
-    btnRemeras.addEventListener('click', crearRemeras);
-    const btnCamperas = document.querySelector('#Camperas');
-    btnCamperas.addEventListener('click', crearCamperas);
-    const btnPantalones = document.querySelector('#Pantalones');
-    btnPantalones.addEventListener('click', crearPantalones)
     const btnRopaInterior = document.querySelector('#RopaInterior');
     btnRopaInterior.innerText = 'Ropa Interior';
-    btnRopaInterior.addEventListener('click', crearRopaInterior);
-    const btnCalzados = document.querySelector('#Calzados');
-    btnCalzados.addEventListener('click', crearCalzados);
-    const btnAccesorios = document.querySelector('#Accesorios');
-    btnAccesorios.addEventListener('click', crearAccesorios);
 
 }
 
@@ -119,10 +127,7 @@ function crearCategorias() {
 
 function crearProductos(categoria) {
     let productos = categoria.productos;
-    console.log(productos);
-    
     for(let producto of productos) {
-        console.log(producto);
         principalSection.innerHTML += `
             <div class="product-list">
                 <img class="product-list__img" src="${producto.img}" alt="${producto.img}">
@@ -133,78 +138,62 @@ function crearProductos(categoria) {
                     <p class="product-list__description"><span class="product-card__span">Descripcion:</span> ${producto.description}.</p>
                 </div>
             </div>
-        `;
+        `
     }
+    const productList = document.querySelectorAll('.product-list');
+    productList.forEach(element => {
+        element.addEventListener('click', () => {
+            const img = element.childNodes[1].src;
+            const nameProduct = element.childNodes[3].childNodes[1].textContent;
+            const priceProduct = element.childNodes[3].childNodes[3].textContent;
+            const talleProduct = element.childNodes[3].childNodes[5].textContent;
+            const descriptionProduct = element.childNodes[3].childNodes[7].textContent;
+
+            agrandarProducto(img, nameProduct, priceProduct, talleProduct, descriptionProduct);
+        })
+    })
+}
+
+//funcion para mostrar en grande el producto seleccionado
+function agrandarProducto(imagen, nombre, precio, talle, descripcion) {
+    principalSection.innerHTML += `
+    <div class="product-background">
+        <div class="product-card">
+            <i class="fa-solid fa-x fa-xm product-card__close" id="x-icon-product"></i>
+            <img class="product-card__img" src="${imagen}" alt="${nombre}">
+            <div class="product-card__data">
+                <h4 class="product-card__name">${nombre}</h4>
+                <p class="product-card__price"><span class="product-card__span">Precio:</span> $${precio}</p>
+                <p class="product-card__talle"><span class="product-card__span span-talle">Talle:</span> ${talle}</p>
+                <p class="product-card__description"><span class="product-card__span">Descripcion:</span> ${descripcion}.</p>
+            </div>
+        </div>
+    </div>
+    `;
 }
 
 //renderizar todos los productos de la tienda
 function crearTodosLosProductos() {
     principalSection.innerHTML = '';
-    let categoryList = [remeras, camperas, pantalones, ropaInterior, calzados, accesorios];
 
     for( let category of categoryList) {
         crearProductos(category);
+        principalSection.addEventListener('click', (event) => {
+            if (event.target.classList.contains('product-card__close')) {
+                principalSection.innerHTML = '';
+                crearTodosLosProductos;
+            }
+        })
     }
 }
 
-//funciones para crear cada categoria por separado
-function crearRemeras() {
-    principalSection.innerHTML = '';
-    crearProductos(remeras);
-}
-function crearCamperas() {
-    principalSection.innerHTML = '';
-    crearProductos(camperas);
-}
-function crearPantalones() {
-    principalSection.innerHTML = '';
-    crearProductos(pantalones);
-}
-function crearRopaInterior() {
-    principalSection.innerHTML = '';
-    crearProductos(ropaInterior);
-}
-function crearCalzados() {
-    principalSection.innerHTML = '';
-    crearProductos(calzados);
-}
-function crearAccesorios() {
-    principalSection.innerHTML = '';
-    crearProductos(accesorios);
-}
 
-//funcion para mostrar en grande el producto seleccionado
-function agrandarProducto() {
-    const productCardDescription = document.createElement('p');
-    productCardDescription.classList.add('product-card__description');
-    const productCardTalle = document.createElement('p');
-    productCardTalle.classList.add('product-card__talle');
-    const productCardPrice = document.createElement('p');
-    productCardPrice.classList.add('product-card__price');
-    const productCardName = document.createElement('h4');
-    productCardName.classList.add('product-card__name');
-    const productCardData = document.createElement('div');
-    productCardData.classList.add('product-card__data');
-    productCardData.appendChild(productCardName)
-    productCardData.appendChild(productCardPrice)
-    productCardData.appendChild(productCardTalle)
-    productCardData.appendChild(productCardDescription);
-    const productCardImg = document.createElement('img');
-    productCardImg.classList.add('product-card__img');
-    const xIconProduct = document.createElement('i');
-    xIconProduct.classList.add('fa-solid');
-    xIconProduct.classList.add('fa-x');
-    xIconProduct.classList.add('fa-xm');
-    xIconProduct.classList.add('product-card__close');
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
-    productCard.appendChild(xIconProduct);
-    productCard.appendChild(productCardImg);
-    productCard.appendChild(productCardData);
-    const productBacground = document.createElement('div');
-    productBacground.classList.add('product-background');
-    productBacground.appendChild(productCard);
 
-    principalSection.appendChild(productBacground);
+
+
+
+//funcion primera letra a minuscula
+
+function firstLetterToLowerCase(string) {
+    return string[0].toLowerCase() + string.slice(1);
 }
-

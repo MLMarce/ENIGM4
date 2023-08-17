@@ -273,9 +273,9 @@ form {
 /* Producto */
 .product-background {
     width: 100vw;
-    height: calc(100vh - 50px);
-    position: absolute;
-    top: 10px;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
