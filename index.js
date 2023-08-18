@@ -138,7 +138,7 @@ function crearProductos(categoria) {
                     <p class="product-list__description"><span class="product-card__span">Descripcion:</span> ${producto.description}.</p>
                 </div>
             </div>
-        `
+            `;
     }
     const productList = document.querySelectorAll('.product-list');
     productList.forEach(element => {
@@ -187,13 +187,3 @@ function crearTodosLosProductos() {
     }
 }
 
-
-
-
-
-
-//funcion primera letra a minuscula
-
-function firstLetterToLowerCase(string) {
-    return string[0].toLowerCase() + string.slice(1);
-}

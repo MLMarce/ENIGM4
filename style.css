@@ -279,7 +279,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0005;
+    background: #0008;
 }
 .product-card {
     width: 80vw;
@@ -417,7 +417,7 @@ form {
 
     /* Producto */
     .product-background {
-        top: 17px;
+        top: 0px;
     }
     .product-card {
         width: auto;
