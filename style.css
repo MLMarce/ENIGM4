@@ -80,7 +80,10 @@ h1 {
     min-height: calc(100vh - 50px);
     top: 50px;
     padding-top: 10px;
-    background: var(--principal);
+    background: url(./img/enigm4cyclescel.png);
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -350,6 +353,11 @@ form {
 
 
 @media  only screen and (min-width: 610px) {
+    .principal-section {
+        background: url(./img/enigm4cycles.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
     .menu-mobile {
         display: none;
     }
