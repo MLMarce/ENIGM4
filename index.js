@@ -163,9 +163,9 @@ function agrandarProducto(imagen, nombre, precio, talle, descripcion) {
             <img class="product-card__img" src="${imagen}" alt="${nombre}">
             <div class="product-card__data">
                 <h4 class="product-card__name">${nombre}</h4>
-                <p class="product-card__price"><span class="product-card__span">Precio:</span> $${precio}</p>
-                <p class="product-card__talle"><span class="product-card__span span-talle">Talle:</span> ${talle}</p>
-                <p class="product-card__description"><span class="product-card__span">Descripcion:</span> ${descripcion}.</p>
+                <p class="product-card__price"><span class="product-card__span"></span> $${precio}</p>
+                <p class="product-card__talle"><span class="product-card__span span-talle"></span> ${talle}</p>
+                <p class="product-card__description"><span class="product-card__span"></span> ${descripcion}.</p>
             </div>
         </div>
     </div>
