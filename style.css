@@ -305,16 +305,19 @@ form {
     justify-content: center;
     align-items: center;
     background: #0008;
+    animation: aparecer 0.3s linear;
 }
 .product-card {
-    width: 80vw;
+    width: 100vw;
     height: auto;
     position: relative;
+    top: 30px;
     display: flex;
     flex-direction: column;
     border: 1px solid #0006;
     border-radius: 10px;
     overflow: hidden;
+    z-index: 200;
 }
 .product-card__close {
     position: absolute;
@@ -473,5 +476,24 @@ form {
     }
     .product-list__img {
         height: 70%;
+    }
+}
+
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes desaparecer {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

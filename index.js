@@ -52,7 +52,7 @@ principalSection.addEventListener('click',  (event) => {
             if(category.categoryName == categoryNameblock) {
                 principalSection.innerHTML = '';
                 crearProductos(category);
-                principalSection.addEventListener('click', (event) => {
+                principalSection.addEventListener('click', (event) => { //cerrando el producto agrandado
                     if (event.target.classList.contains('product-card__close')) {
                         principalSection.innerHTML = '';
                         crearProductos(category);
