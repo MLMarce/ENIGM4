@@ -55,7 +55,7 @@ principalSection.addEventListener('click',  (event) => {
                 principalSection.addEventListener('click', (event) => {
                     if (event.target.classList.contains('product-card__close')) {
                         principalSection.innerHTML = '';
-                        crearProductos(category)
+                        crearProductos(category);
                     }
                 })
             }
@@ -85,20 +85,20 @@ function buscar() { //renombrar y mejorar para que se pueda buscar cualquier pro
     //obteniendo lista de categorias y cantidad de productos
     if(valorInput == "categorias" || valorInput == "Categoria") {
         crearCategorias();
-        cerrarAside()
+        cerrarAside();
     } else {
         for(let dato of datos) {
             let i = 0;
             categoria = dato.categoryName;
             let producto = dato.productos;
-            console.log(producto)
-            if(categoria.includes(valorInput)) {
+            console.log(producto);
+            if(categoria.includes(valorInput) || categoria.includes(primeraLetraMayuscula(valorInput))) {
                 crearProductos(dato);//crear esta funcion para renderizar los productos de dicha categoria
                 cerrarAside();
-            } else if(producto[i].name.includes(valorInput) && i < producto.length) {
+            } else if(producto[i].name.includes(valorInput) || producto[i].name.includes(primeraLetraMayuscula(valorInput)) && i < producto.length) {
                 crearProductos(dato);
                 i++;
-                cerrarAside()
+                cerrarAside();
             }
         }
     }
@@ -186,4 +186,13 @@ function crearTodosLosProductos() {
         })
     }
 }
+
+function primeraLetraMayuscula(str) {
+    let primeraLetraConvertida = str.charAt(0).toUpperCase();
+    let restoDelString = str.slice(1);
+    return primeraLetraConvertida + restoDelString;
+
+}
+
+console.log(primeraLetraMayuscula("milanesa"));
 
