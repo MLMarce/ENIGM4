@@ -116,6 +116,9 @@ function crearCategorias() {
         </div>
         `;
     }
+    principalSection.innerHTML += `
+    <div class="whatsapp-continuo"><a href="https://api.whatsapp.com/send/?phone=543425103196&text&type=phone_number&app_absent=0" target="_blank"></a></div>
+    `;
 
     //accediendo a los productos de cada categoria al darles click
     const btnRopaInterior = document.querySelector('#RopaInterior');
@@ -140,6 +143,10 @@ function crearProductos(categoria) {
             </div>
             `;
     }
+    principalSection.innerHTML += `
+    <div class="whatsapp-continuo"><a href="https://api.whatsapp.com/send/?phone=543425103196&text&type=phone_number&app_absent=0" target="_blank"></a></div>
+    `;
+    
     const productList = document.querySelectorAll('.product-list');
     productList.forEach(element => {
         element.addEventListener('click', () => {
